@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Accordion from './components/Accordion'
 import TrendChart from './components/charts/TrendChart'
@@ -7,7 +7,14 @@ import SessionHistory from './components/session/SessionHistory'
 import type { Session } from './types'
 
 function App() {
-  const [sessions, setSessions] = useState<Session[]>([])
+  const [sessions, setSessions] = useState<Session[]>(() => {
+    const saved = localStorage.getItem('practice-sessions')
+    return saved ? JSON.parse(saved) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('practice-sessions', JSON.stringify(sessions))
+  }, [sessions])
 
   function handleSessionCreated(session: Session) {
     setSessions([...sessions, session])
