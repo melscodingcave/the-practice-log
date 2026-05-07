@@ -1,4 +1,5 @@
 import type { Session } from '../../types'
+import AiDebrief from '../ai/AiDebrief'
 
 interface Props {
     sessions: Session[]
@@ -15,7 +16,6 @@ export default function SessionHistory({ sessions }: Props) {
 
     return (
         <div className="space-y-4">
-            <h2 className="text-xl font-bold text-blue-400">Session History</h2>
             {sessions.map(session => (
                 <div key={session.id} className="bg-gray-800 rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
@@ -81,6 +81,9 @@ export default function SessionHistory({ sessions }: Props) {
                             ))}
                         </div>
                     )}
+
+                    <AiDebrief session={session} />
+
                 </div>
             ))}
         </div>

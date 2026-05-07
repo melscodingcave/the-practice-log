@@ -40,10 +40,6 @@ export default function SessionForm({ onSessionCreated }: Props) {
 
     return (
         <div className="mb-2">
-            <h2 className="text-xl font-bold text-blue-400 mb-4">
-                Log Practice Session
-            </h2>
-
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-300 mb-1">Drill Type</label>

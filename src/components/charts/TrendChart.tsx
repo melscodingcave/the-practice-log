@@ -45,10 +45,6 @@ export default function TrendChart({ sessions }: Props) {
 
     return (
         <div className="mb-2">
-            <h2 className="text-xl font-bold text-blue-400 mb-4">
-                Practice Trends
-            </h2>
-
             <div className="mb-4">
                 <label className="block text-gray-300 mb-1">Drill Type</label>
                 <select
