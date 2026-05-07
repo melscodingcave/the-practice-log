@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import TrendChart from './components/charts/TrendChart'
 import SessionForm from './components/session/SessionForm'
 import SessionHistory from './components/session/SessionHistory'
 import type { Session } from './types'
@@ -20,6 +21,7 @@ function App() {
 
       <main className="max-w-4xl mx-auto px-6">
         <SessionForm onSessionCreated={handleSessionCreated} />
+        <TrendChart sessions={sessions} />
         <SessionHistory sessions={sessions} />
       </main>
     </div>
