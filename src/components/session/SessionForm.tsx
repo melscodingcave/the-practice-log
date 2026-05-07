@@ -39,7 +39,7 @@ export default function SessionForm({ onSessionCreated }: Props) {
     }
 
     return (
-        <div className="bg-gray-800 rounded-lg p-6 mb-6">
+        <div className="mb-2">
             <h2 className="text-xl font-bold text-blue-400 mb-4">
                 Log Practice Session
             </h2>

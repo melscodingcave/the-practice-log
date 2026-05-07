@@ -7,7 +7,7 @@ interface Props {
 export default function SessionHistory({ sessions }: Props) {
     if (sessions.length === 0) {
         return (
-            <div className="bg-gray-800 rounded-lg p-6 text-center text-gray-500">
+            <div className="text-center text-gray-500 py-4">
                 No sessions logged yet. Start practicing! 🎱
             </div>
         )

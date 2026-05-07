@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Accordion from './components/Accordion'
 import TrendChart from './components/charts/TrendChart'
 import SessionForm from './components/session/SessionForm'
 import SessionHistory from './components/session/SessionHistory'
@@ -20,9 +21,15 @@ function App() {
       </header>
 
       <main className="max-w-4xl mx-auto px-6">
-        <SessionForm onSessionCreated={handleSessionCreated} />
-        <TrendChart sessions={sessions} />
-        <SessionHistory sessions={sessions} />
+        <Accordion title="Log Practice Session">
+          <SessionForm onSessionCreated={handleSessionCreated} />
+        </Accordion>
+        <Accordion title="Practice Trends">
+          <TrendChart sessions={sessions} />
+        </Accordion>
+        <Accordion title="Session History" defaultOpen={true}>
+          <SessionHistory sessions={sessions} />
+        </Accordion>
       </main>
     </div>
   )
