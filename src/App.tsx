@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import SessionForm from './components/session/SessionForm'
+import SessionHistory from './components/session/SessionHistory'
 import type { Session } from './types'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
       <main className="max-w-4xl mx-auto px-6">
         <SessionForm onSessionCreated={handleSessionCreated} />
+        <SessionHistory sessions={sessions} />
       </main>
     </div>
   )
