@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# 🎱 The Practice Log
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A billiards practice session tracker with AI-powered coaching feedback.
 
-Currently, two official plugins are available:
+Built as a portfolio project to demonstrate React, TypeScript, Vite, Tailwind CSS, component architecture, and real-world AI API integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Charts:** Recharts
+- **AI:** Anthropic Claude API (claude-sonnet-4-5)
+- **Persistence:** Browser localStorage
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Log practice sessions with drill type and notes
+- Track individual shots — cue ball contact point, power, and result
+- View session history with per-shot breakdown
+- Visualize made/missed trends over time by drill type
+- Get AI-powered coaching feedback on any session
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Create a `.env` file in the root: VITE_ANTHROPIC_API_KEY=your-api-key-here
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎱 Drill Types Supported
+
+Straight-ins, Cut Shots, Cue Ball Control, Breaking, Safety Shots, Kick Shots, Bank Shots, Ghost
+
+---
+
+## 🤖 AI-Assisted Development
+
+See [AI-NOTES.md](./AI-NOTES.md) for a transparent log of how AI tooling was used in this project.
+
+---
+
+## 🔗 Related Projects
+
+- **[cue-qa](https://github.com/melscodingcave/cue-qa)** — Playwright E2E test suite for this app
